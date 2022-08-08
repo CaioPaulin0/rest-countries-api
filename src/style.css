@@ -27,3 +27,17 @@ li{
 .remove{
     display: none;
 }
+
+.countrySelect{
+    width: 1200px;
+    height: max-content;
+    justify-content: space-between;
+}
+
+.countryText{
+    width: 600px;
+    height: max-content;
+    background-color: #575757;
+}
+
+
