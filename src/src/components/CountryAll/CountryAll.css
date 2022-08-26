@@ -1,0 +1,9 @@
+.countryAll{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    gap: 80px;
+}
