@@ -1,6 +1,8 @@
 import './App.css'
 import CountryAll from './components/CountryAll';
 import SearchCountry from './components/SearchCountry';
+import SelectCountry from './components/SelectCountry';
+
 
 function App() {
   return (
@@ -8,11 +10,13 @@ function App() {
     <header className="header">
       <p>Where in the world?</p>
     </header>
-    <section>
+    <section className='section'>
 
     <SearchCountry />
     <CountryAll />
     </section>
+    
+    <SelectCountry />
     </>
   );
 }

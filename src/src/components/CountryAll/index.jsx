@@ -22,7 +22,6 @@ const CountryAll = () => {
 
     return (
         <div className='countryAll'>
-   
             {countryDiv.map(function(res){
                 return <Country
                     key={res.name.common}

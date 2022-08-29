@@ -1,24 +1,37 @@
+
 import './Country.css'
 
 const Country = ({img,name,population,region,capital,json}) => {
 
-        return (
-            <div onClick={() => {      
-                const objData = {
-                    name: json.name.common,
-                    nativeName: json.name.nativeName.nld,
-                    population: json.population,
-                    region: json.region,
-                    subRegion: json.subregion,
-                    capital: json.capital,
-                    topLevelDomain: json.tld,
-                    currencies: json.currencies,
-                    languagues : json.languages
-                }
+  function click(){
+        const objData =  {
 
-                console.log(objData)
-        }}  
-        className="country" key={name} date-country={region}>
+            img: json.flags.png,
+            name: json.name.common,
+            nativeName: json.name.nativeName,
+            population: json.population,
+            region: json.region,
+            subRegion: json.subregion,
+            capital: json.capital,
+            topLevelDomain: json.tld,
+            currencies: json.currencies,
+            languagues : json.languages
+        }
+
+        localStorage.setItem('country', JSON.stringify(objData))
+        document.querySelector('.section').style.display= "none"
+        console.log(json)
+        document.querySelector('.sectionCountry').style.display= "block"
+    }
+
+
+        return (
+            <div 
+            onClick={click}  
+            className="country" 
+            key={name} 
+            date-country={region}
+            >
             <img src={img} alt={name} />
             <div className='countryInfo'>
                 <strong>{name}</strong>
