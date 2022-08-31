@@ -1,11 +1,37 @@
 @import url('../../var.css');
 
 .sectionCountry{
-    display: none;
+    max-width: 1440px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.sectionCountry a{
+    width: max-content;
+    background-color: var(--ElementColor);
+    text-decoration: none;
+    font-size: 2rem;
+    color: var(--white);
+    padding: 10px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+    border-radius: 10px;
+    text-align: center;
 }
 
 .countrySelect{
     display: flex;
+    justify-content: space-between;
+}
+
+.countrySelect img{
+    width: 650px;
+}
+
+.countryText{
+    width: 500px;
 }
 
 .countryText strong{
@@ -27,4 +53,18 @@
 
 .countryText span{
     color: hsl(0, 0%, 79%);
+}
+
+.bCountries{
+    width: 330px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bCountries li{
+    color: var(--white);
+    background-color: var(--ElementColor);
+    padding: 4px 10px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+    border-radius: 5px; 
 }

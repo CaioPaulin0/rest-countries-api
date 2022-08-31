@@ -1,5 +1,6 @@
 
-
+import React from 'react';
+import Header from '../Header';
 
 import './SelectCountry.css'
 
@@ -7,10 +8,17 @@ const SelectCountry =({style,name}) => {
 
     const ls = localStorage.getItem('country')   
     const dataJson = JSON.parse(ls)
+    console.log(dataJson)
 
+    const nativeName = Object.values(dataJson.nativeName)[0]
+    const currencies = Object.values(dataJson.currencies)[0]
+    const Languagues = Object.values(dataJson.languagues)[0]
+    console.log(Languagues)
     return (
+        <>
+        <Header />
         <section style={style} className="sectionCountry">
-            <button>Back</button>
+            <a href="/"> ← Back</a>
             
             <div className='countrySelect'>
                 <img src={dataJson.img} alt='country flag' />
@@ -20,7 +28,7 @@ const SelectCountry =({style,name}) => {
                 <ul>
                     <li>
                         <p>Native Name:</p>
-                        <span>{dataJson.nativeNAME}</span>
+                        <span>{nativeName.official}</span>
                     </li>
 
                     <li>
@@ -47,11 +55,27 @@ const SelectCountry =({style,name}) => {
                         <p>Top Level Domain:</p>
                         <span>{dataJson.topLevelDomain}</span>
                     </li>
-                  
+
+                    <li>
+                        <p>Currencies:</p>
+                        <span>{currencies.name}</span>
+                    </li>
+
+                    <li>
+                        <p>Languagues:</p>
+                        <span>{Languagues}</span>
+                    </li>
+                </ul>
+                <ul className='bCountries'>
+                    <p>Border Countries</p>
+                    {dataJson.borderCountries === undefined ? <li>none</li> : dataJson.borderCountries.map((cont) => {
+                        return <li key={cont}>{cont}</li>
+                    })}
                 </ul>
             </div>
             </div>
         </section>
+        </>
     )
 }
 

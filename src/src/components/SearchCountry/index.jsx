@@ -1,8 +1,9 @@
+import React from 'react';
 import './SearchCountry.css'
-
 const SearchCountry = () => {
     return (
         <div className='search-cont'>
+            
         <input type='text' placeholder='Seach For a country...'/>
 
         <select>
@@ -13,6 +14,7 @@ const SearchCountry = () => {
             <option value="Africa">Europe</option>
             <option value="Africa">Oceania</option>
         </select>
+
         </div>
     )
 }

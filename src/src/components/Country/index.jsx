@@ -1,4 +1,4 @@
-
+import React from 'react';
 import './Country.css'
 
 const Country = ({img,name,population,region,capital,json}) => {
@@ -15,13 +15,12 @@ const Country = ({img,name,population,region,capital,json}) => {
             capital: json.capital,
             topLevelDomain: json.tld,
             currencies: json.currencies,
-            languagues : json.languages
+            languagues : json.languages,
+            borderCountries: json.borders
         }
-
         localStorage.setItem('country', JSON.stringify(objData))
-        document.querySelector('.section').style.display= "none"
-        console.log(json)
-        document.querySelector('.sectionCountry').style.display= "block"
+        console.log(objData)
+        window.location.href = "/SelectCountry"
     }
 
 
