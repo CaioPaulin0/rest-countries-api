@@ -33,3 +33,10 @@
     border-radius: 10px;
     text-align: center;
 }
+
+.toggle{
+    display: none;
+}
+.on{
+    display: block;
+}
