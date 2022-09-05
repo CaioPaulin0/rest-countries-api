@@ -30,6 +30,7 @@ const Country = ({img,name,population,region,capital,json}) => {
             className="country" 
             key={name} 
             date-country={region}
+            date-name={name}
             >
             <img src={img} alt={name} />
             <div className='countryInfo'>
