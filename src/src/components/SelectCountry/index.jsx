@@ -1,5 +1,5 @@
 
-import React from 'react';
+
 import Header from '../Header';
 
 import './SelectCountry.css'
@@ -8,12 +8,13 @@ const SelectCountry =({style,name}) => {
 
     const ls = localStorage.getItem('country')   
     const dataJson = JSON.parse(ls)
-    console.log(dataJson)
 
     const nativeName = Object.values(dataJson.nativeName)[0]
     const currencies = Object.values(dataJson.currencies)[0]
     const Languagues = Object.values(dataJson.languagues)[0]
-    console.log(Languagues)
+
+    document.title = ` Country - ${dataJson.name}`
+
     return (
         <>
         <Header />
