@@ -19,7 +19,6 @@ const Country = ({img,name,population,region,capital,json}) => {
             borderCountries: json.borders
         }
         localStorage.setItem('country', JSON.stringify(objData))
-        console.log(objData)
         window.location.href = "/SelectCountry"
     }
 
