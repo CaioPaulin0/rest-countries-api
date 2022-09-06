@@ -2,15 +2,30 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import Country from '../Country'
+import SearchCountry from '../SearchCountry'
 import './CountryAll.css'
 
 const CountryAll = () => {
 
     const [countryDiv, setCountryDiv] = useState([])
-
+    const [filter, setFilter] = useState('Americas')
+    const [searchInput, setSearchInput] = useState('')
 
      useEffect(() => {
-        fetch('https://restcountries.com/v3.1/all')
+
+    if(searchInput === ''){
+        fetch(`https://restcountries.com/v3.1/region/${filter}`)
+        .then(response => response.json())
+        .then(data => {
+           setCountryDiv(data)   
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+    }
+
+    else{
+        fetch(`https://restcountries.com/v3.1/name/${searchInput}`)
         .then(response => response.json())
         .then(data => {
            setCountryDiv(data)
@@ -18,9 +33,17 @@ const CountryAll = () => {
         .catch((error) => {
             console.log(error)
         })
-    }, [])
+    }
+
+    }, [filter, searchInput])
 
     return (
+        <>
+        <SearchCountry 
+        filter={(e) => setFilter(e.target.value)
+        }
+        search={(e) => setSearchInput(e.target.value)}
+        />
         <div className='countryAll'>
             {countryDiv.map(function(res){
                 return <Country
@@ -34,6 +57,7 @@ const CountryAll = () => {
                 />
             })}
         </div>
+        </>
     )
 }
 
