@@ -11,6 +11,8 @@ const CountryAll = () => {
     const [filter, setFilter] = useState('Americas')
     const [searchInput, setSearchInput] = useState('')
 
+    const noCountries = countryDiv.status || countryDiv.message
+
      useEffect(() => {
 
     if(searchInput === ''){
@@ -45,7 +47,8 @@ const CountryAll = () => {
         search={(e) => setSearchInput(e.target.value)}
         />
         <div className='countryAll'>
-            {countryDiv.map(function(res){
+           {!noCountries ? (
+             countryDiv.map(function(res){
                 return <Country
                     key={res.name.common}
                     img={res.flags.png}
@@ -55,7 +58,10 @@ const CountryAll = () => {
                     capital={res.capital}
                     json={res}
                 />
-            })}
+            })
+           ) : (
+            <p className='notFound'> Not Found </p>
+           )}
         </div>
         </>
     )
