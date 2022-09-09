@@ -18,7 +18,7 @@ const SelectCountry =({style,name}) => {
         <Header />
         <section style={style} className="sectionCountry">
             <Link to= '/' className='linkStyle'>
-            <i class="fa-solid fa-arrow-left"></i>
+            <p className='back'><i class="fa-solid fa-arrow-left"/>back</p>
             </Link>
             
             <div className='countrySelect'>

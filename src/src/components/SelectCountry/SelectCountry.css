@@ -9,7 +9,7 @@
     margin-top: 30px;
 }
 
-.sectionCountry a{
+.back{
     width: max-content;
     background-color: var(--ElementColor);
     text-decoration: none;
@@ -97,4 +97,8 @@
 
 .linkStyle{
     text-decoration: none;
+}
+
+.linkStyle i{
+    margin-right: 8px;
 }
