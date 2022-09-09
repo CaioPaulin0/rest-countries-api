@@ -7,3 +7,16 @@
     margin-top: 50px;
     gap: 80px;
 }
+
+.notFound{
+    font-size: 3rem;
+    color: var(--white);
+    font-weight: 800;
+    margin: auto;
+}
+
+@media screen and (max-width: 700px){
+    .country{
+        margin: 0 auto;
+    }
+}
