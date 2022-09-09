@@ -1,5 +1,6 @@
 :root{
-    --bgColor: hsl(207, 26%, 17%);
-    --ElementColor: hsl(209, 23%, 22%);
-    --white: hsl(0, 0%, 100%);
+    --bgColor: #202c37;
+    --ElementColor: #2b3945;
+    --white: #ffffff;
+    --grey: #c9c9c9;
 }
