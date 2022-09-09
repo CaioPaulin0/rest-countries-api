@@ -1,5 +1,3 @@
-
-
 import Header from '../Header';
 
 import './SelectCountry.css'
@@ -19,14 +17,15 @@ const SelectCountry =({style,name}) => {
         <>
         <Header />
         <section style={style} className="sectionCountry">
-            <a href="/"> ← Back</a>
+            <a href="/"><i class="fa-solid fa-arrow-left"></i> Back</a>
             
             <div className='countrySelect'>
                 <img src={dataJson.img} alt='country flag' />
             
             <div className='countryText'>
                 <strong>{dataJson.name}</strong>
-                <ul>
+                <ul className='countryInfoText'>
+                    <div>
                     <li>
                         <p>Native Name:</p>
                         <span>{nativeName.official}</span>
@@ -52,6 +51,9 @@ const SelectCountry =({style,name}) => {
                         <span>{dataJson.capital}</span>
                     </li>
 
+                    </div>
+                    
+                    <div>
                     <li>
                         <p>Top Level Domain:</p>
                         <span>{dataJson.topLevelDomain}</span>
@@ -66,9 +68,10 @@ const SelectCountry =({style,name}) => {
                         <p>Languagues:</p>
                         <span>{Languagues}</span>
                     </li>
+                    </div>
                 </ul>
                 <ul className='bCountries'>
-                    <p>Border Countries</p>
+                    <p>Border Countries :</p>
                     {dataJson.borderCountries === undefined ? <li>none</li> : dataJson.borderCountries.map((cont) => {
                         return <li key={cont}>{cont}</li>
                     })}
