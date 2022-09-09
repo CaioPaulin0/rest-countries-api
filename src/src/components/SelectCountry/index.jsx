@@ -1,7 +1,7 @@
 import Header from '../Header';
 
 import './SelectCountry.css'
-
+import {Link} from "react-router-dom"
 const SelectCountry =({style,name}) => {
 
     const ls = localStorage.getItem('country')   
@@ -17,7 +17,9 @@ const SelectCountry =({style,name}) => {
         <>
         <Header />
         <section style={style} className="sectionCountry">
-            <a href="/"><i class="fa-solid fa-arrow-left"></i> Back</a>
+            <Link to= '/' className='linkStyle'>
+            <i class="fa-solid fa-arrow-left"></i>
+            </Link>
             
             <div className='countrySelect'>
                 <img src={dataJson.img} alt='country flag' />

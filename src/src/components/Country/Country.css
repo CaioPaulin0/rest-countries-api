@@ -46,3 +46,7 @@
 .countryInfo span{
     color: var(--grey)
 }
+
+.linkStyle{
+    text-decoration: none;
+}

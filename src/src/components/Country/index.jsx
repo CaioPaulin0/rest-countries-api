@@ -1,6 +1,6 @@
 import React from 'react';
 import './Country.css'
-
+import {Link} from "react-router-dom"
 const Country = ({img,name,population,region,capital,json}) => {
 
   function click(){
@@ -19,11 +19,11 @@ const Country = ({img,name,population,region,capital,json}) => {
             borderCountries: json.borders
         }
         localStorage.setItem('country', JSON.stringify(objData))
-        window.location.href = "/SelectCountry"
     }
 
 
         return (
+            <Link to="/SelectCountry" className='linkStyle'>
             <div 
             onClick={click}  
             className="country" 
@@ -50,6 +50,7 @@ const Country = ({img,name,population,region,capital,json}) => {
                 </ul>
             </div>
         </div>
+        </Link>
     )
 }
 
